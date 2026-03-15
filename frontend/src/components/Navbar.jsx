@@ -170,6 +170,7 @@ const Navbar = ({ onContinue }) => {
       <AIDialog 
         isOpen={isDialogOpen} 
         onClose={closeDialog}
+        onContinue={handleContinue}
         userName={guestName}
       />
     </>

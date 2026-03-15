@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './AIDialog.css';
 
-const AIDialog = ({ isOpen, onClose, userName }) => {
+const AIDialog = ({ isOpen, onClose, onContinue, userName }) => {
   const [messages, setMessages] = useState([]);
   const [userInput, setUserInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -93,6 +93,7 @@ const AIDialog = ({ isOpen, onClose, userName }) => {
       hasShownGreeting.current = false;
       setMessages([]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- run only when isOpen changes
   }, [isOpen]);
 
   const handleAIResponse = (response) => {

@@ -68,18 +68,25 @@ function App() {
       {/* Conditional Page Rendering */}
       {currentPage === 'home' ? (
         <main className="main-content">
-          {/* Hero Section with Background Image */}
-          <section className="hero-section">
-            <div className="hero-image-container">
-              <img 
-                src="/images/background.svg" 
-                alt="Airbnb Experiences" 
-                className="hero-image"
-              />
-            </div>
-          </section>  
-          {/* Additional content */}
-         
+          {error && <p className="error-message">{error}</p>}
+          {loading ? (
+            <p className="loading-message">Loading experiences...</p>
+          ) : (
+            <>
+              {/* Hero Section with Background Image */}
+              <section className="hero-section">
+                <div className="hero-image-container">
+                  <img 
+                    src="/images/background-new.jpg" 
+                    alt="Airbnb Experiences" 
+                    className="hero-image"
+                  />
+                </div>
+              </section>  
+              {/* Additional content - popularExperiences available for future use */}
+              {popularExperiences.length >= 0 && null}
+            </>
+          )}
         </main>
       ) : (
         <main className="main-content">
